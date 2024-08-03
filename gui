@@ -1,0 +1,41 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Item Duper | MM2", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Name of Knives/Guns"
+})
+
+Tab:AddTextbox({
+	Name = "Name of Knives/Guns",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+local Section = Tab:AddSection({
+	Name = "Amount of Knives/Guns"
+})
+
+Tab:AddSlider({
+	Name = "Amount of Knives/Guns",
+	Min = 0,
+	Max = 50,
+	Default = 5,
+	Color = Color3.fromRGB(245,5,5),
+	Increment = 1,
+	ValueName = "Amount of Knives/Guns",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+    
+OrionLib:Init()
